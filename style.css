@@ -13,14 +13,11 @@ header{
 }
 .logo{
     /* image 3 (Header) */
-position: absolute;
-width: 212px;
-height: 72px;
-left: 370px;
-top: 14px;
+    position: absolute;
+    left: 370px;
+    top: 14px;
 }
 .text_header{
-    position: static;
     width: 93px;
     height: 56px;
     display: flex;
@@ -122,14 +119,7 @@ main_screen{
     padding: 0px;
 }
 h1{
-    position: static;
-    width: 672px;
     height: 62px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10;
     padding: 0px;
     flex: none;
     order: 0;
