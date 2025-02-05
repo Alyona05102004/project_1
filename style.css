@@ -161,7 +161,7 @@ h1{
     margin:auto;
     position: relative;
 }
-.scroller{
+.scroller {
     width: 100%;
     overflow-x: scroll;
     display: flex;
@@ -212,4 +212,26 @@ h1{
  .testimonials .btn.prev {
     left: 15px;
  }
+
+
+
+ .indicators {
+    position: absolute;
+    top:617px;
+    left: 510px;
+    display: flex;
+    justify-content: center;
+}
+.indicator {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);;
+    border-radius: 1px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.indicator.active {
+    background-color: white;
+    width: 40px;
+}
 

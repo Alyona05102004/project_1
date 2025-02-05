@@ -2,24 +2,38 @@
     const scroller = testimonials.querySelector('.scroller');
     const nextBtn = testimonials.querySelector('.btn.next');
     const prevBtn = testimonials.querySelector('.btn.prev');
-    const itemWidth = testimonials.querySelector('.item').clientWidth;
+    const items = testimonials.querySelectorAll('.item');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
   
     nextBtn.addEventListener('click', scrollToNextItem);
     prevBtn.addEventListener('click', scrollToPrevItem);
 
     function scrollToNextItem() {
-        if(scroller.scrollLeft<(scroller.scrollWidth - itemWidth))
-       // Позиция прокрутки расположена не в начале последнего элемента
-            scroller.scrollBy({left: itemWidth, top: 0, behavior:'smooth'});
-        else
-       // Достигнут последний элемент. Возвращаемся к первому элементу, установив для позиции прокрутки 0
-            scroller.scrollTo({left: 0, top: 0, behavior:'smooth'});
+        if(currentIndex<items.length-1){
+            currentIndex++;
+            updateCarousel();
+        }
+        else{
+            currentIndex = 0;
+            updateCarousel();
+        }
     }
     function scrollToPrevItem() {
-        if(scroller.scrollLeft != 0)
-       // Позиция прокрутки расположена не в начале последнего элемента
-            scroller.scrollBy({left: -itemWidth, top: 0, behavior:'smooth'});
-        else
-       // Это первый элемент. Переходим к последнему элементу, установив для позиции прокрутки ширину скроллера
-            scroller.scrollTo({left: scroller.scrollWidth, top: 0, behavior:'smooth'});
+        if(currentIndex>0){
+            currentIndex--;
+            updateCarousel();
         }
+        else{
+            currentIndex = items.length-1;
+            updateCarousel();
+        }
+    }
+    function updateCarousel(){
+        const itemWidth = items[currentIndex].clientWidth;
+        scroller.scrollTo({left: itemWidth*currentIndex, top: 0, behavior: 'smooth'});
+        indicators.forEach((indicator, index)=>{
+            indicator.classList.toggle('active', index==currentIndex);
+        });
+    }
+    scroller.style.overflow = 'hidden';
