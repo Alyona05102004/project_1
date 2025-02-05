@@ -175,23 +175,41 @@ h1{
     position: absolute;
     top: 50%;
     margin-top: 20px;
-    height: 30px;
-    width: 30px;
-    border-radius: 15px;
-    background-color: rgba(95, 106, 117, 0.3);
+    height: 56px;
+    width: 56px;
+    background-color: rgb(234, 245, 237);
     z-index: 1;
-    line-height: 30px;
+    line-height: 50px;
     text-align: center;
-    color: white;
-    font-weight: bold;
+    color: rgb(59, 146, 84);
+    font-weight: 900;
+    border-radius: 10px;
  }
  .testimonials .btn:hover{
-    background-color: rgba(95, 106, 117, 0.5);
+    background-color: rgb(78, 163, 102);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+ }
+ .testimonials .btn:active{
+    background-color: rgb(42, 121, 65);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+ }
+ .testimonials .btn:focus{
+    background-color: rgb(78, 163, 102);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+ }
+ .testimonials .btn:focus{
+    background-color: rgb(78, 163, 102);
+    color:rgb(255, 255, 255);
     cursor: pointer;
  }
  .testimonials .btn.next {
     right: 15px;
+
  }
  .testimonials .btn.prev {
     left: 15px;
  }
+
