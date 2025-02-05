@@ -159,8 +159,10 @@ h1{
 .testimonials{
     max-width: 1180px;
     margin:auto;
+    position: relative;
 }
 .scroller{
+    width: 100%;
     overflow-x: scroll;
     display: flex;
     scroll-snap-type: x mandatory;
@@ -169,3 +171,27 @@ h1{
     min-width: 100%;
     scroll-snap-align: center;
 }
+.testimonials .btn {
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: rgba(95, 106, 117, 0.3);
+    z-index: 1;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+ }
+ .testimonials .btn:hover{
+    background-color: rgba(95, 106, 117, 0.5);
+    cursor: pointer;
+ }
+ .testimonials .btn.next {
+    right: 15px;
+ }
+ .testimonials .btn.prev {
+    left: 15px;
+ }
